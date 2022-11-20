@@ -25,9 +25,9 @@ int main(void)
     }
 
     int protection = PROT_READ | PROT_WRITE;
-    int visibility = MAP_SHARED | MAP_ANONYMOUS;
+    int flags = MAP_SHARED | MAP_ANONYMOUS;
     
-    float *shared = mmap(NULL, sizeof(float), protection, visibility, -1, 0);
+    float *shared = mmap(NULL, sizeof(float), protection, flags, -1, 0);
     *shared = 0;
 
     int id = fork();
