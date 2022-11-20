@@ -28,7 +28,7 @@ int main(void)
     int visibility = MAP_SHARED | MAP_ANONYMOUS;
     
     float *shared = mmap(NULL, sizeof(float), protection, visibility, -1, 0);
-    shared[0] = 0;
+    *shared = 0;
 
     int id = fork();
     if (id == -1)
