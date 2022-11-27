@@ -94,6 +94,7 @@ int main(void)
         waitpid(pid, NULL, 0);
         printf("%f\n", *shared_memory);
         munmap(shared_memory, sizeof(float));
+        munmap(mapped_file, st.st_size);
     }
     return 0;
 }
